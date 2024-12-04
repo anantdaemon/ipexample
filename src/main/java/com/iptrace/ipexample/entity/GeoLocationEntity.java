@@ -3,9 +3,6 @@
  */
 package com.iptrace.ipexample.entity;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +12,6 @@ import jakarta.persistence.Id;
  * 
  */
 @Entity
-@Access(AccessType.FIELD)
 public class GeoLocationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +34,7 @@ public class GeoLocationEntity {
 	private String currency;
 	private String isp;
 	private String org;
-	private String as;
+	private String asCode;
 	private String asname;
 	private String reverse;
 	private boolean mobile;
@@ -254,13 +250,13 @@ public class GeoLocationEntity {
 	 * @return the as
 	 */
 	public String getAs() {
-		return as;
+		return asCode;
 	}
 	/**
 	 * @param as the as to set
 	 */
-	public void setAs(String as) {
-		this.as = as;
+	public void setAs(String asCode) {
+		this.asCode = asCode;
 	}
 	/**
 	 * @return the asname
