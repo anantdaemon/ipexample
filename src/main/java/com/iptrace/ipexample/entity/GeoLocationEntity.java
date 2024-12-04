@@ -1,6 +1,25 @@
-package com.iptrace.ipexample.dto;
+/**
+ * 
+ */
+package com.iptrace.ipexample.entity;
 
-public class GeoLocation {
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+/**
+ * 
+ */
+@Entity
+@Access(AccessType.FIELD)
+public class GeoLocationEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	private String status;
 	private String continent;
@@ -25,79 +44,8 @@ public class GeoLocation {
 	private boolean mobile;
 	private boolean proxy;
 	private boolean hosting;
-	private String query;
+	private String ipAddress;
 	
-	/**
-	 * @param status
-	 * @param continent
-	 * @param continentCode
-	 * @param country
-	 * @param countryCode
-	 * @param region
-	 * @param regionName
-	 * @param city
-	 * @param district
-	 * @param zip
-	 * @param lat
-	 * @param lon
-	 * @param timezone
-	 * @param offset
-	 * @param currency
-	 * @param isp
-	 * @param org
-	 * @param as
-	 * @param asname
-	 * @param reverse
-	 * @param mobile
-	 * @param proxy
-	 * @param hosting
-	 * @param query
-	 */
-	public GeoLocation(String status, String continent, String continentCode, String country, String countryCode,
-			String region, String regionName, String city, String district, int zip, double lat, double lon,
-			String timezone, double offset, String currency, String isp, String org, String as, String asname,
-			String reverse, boolean mobile, boolean proxy, boolean hosting, String query) {
-		super();
-		this.status = status;
-		this.continent = continent;
-		this.continentCode = continentCode;
-		this.country = country;
-		this.countryCode = countryCode;
-		this.region = region;
-		this.regionName = regionName;
-		this.city = city;
-		this.district = district;
-		this.zip = zip;
-		this.lat = lat;
-		this.lon = lon;
-		this.timezone = timezone;
-		this.offset = offset;
-		this.currency = currency;
-		this.isp = isp;
-		this.org = org;
-		this.as = as;
-		this.asname = asname;
-		this.reverse = reverse;
-		this.mobile = mobile;
-		this.proxy = proxy;
-		this.hosting = hosting;
-		this.query = query;
-	}
-	/**
-	 * 
-	 */
-	public GeoLocation() {
-		super();
-	}
-	@Override
-	public String toString() {
-		return "GeoLocation [status=" + status + ", continent=" + continent + ", continentCode=" + continentCode
-				+ ", country=" + country + ", countryCode=" + countryCode + ", region=" + region + ", regionName="
-				+ regionName + ", city=" + city + ", district=" + district + ", zip=" + zip + ", lat=" + lat + ", lon="
-				+ lon + ", timezone=" + timezone + ", offset=" + offset + ", currency=" + currency + ", isp=" + isp
-				+ ", org=" + org + ", as=" + as + ", asname=" + asname + ", reverse=" + reverse + ", mobile=" + mobile
-				+ ", proxy=" + proxy + ", hosting=" + hosting + ", query=" + query + "]";
-	}
 	/**
 	 * @return the status
 	 */
@@ -377,15 +325,14 @@ public class GeoLocation {
 	/**
 	 * @return the query
 	 */
-	public String getQuery() {
-		return query;
+	public String getIpAddress() {
+		return ipAddress;
 	}
 	/**
-	 * @param query the query to set
+	 * @param ipAddress the ipAddress to set
 	 */
-	public void setQuery(String query) {
-		this.query = query;
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 	
-
 }
